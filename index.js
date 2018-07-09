@@ -18,6 +18,7 @@ let byeCount = 0;
 while (true) {
   const input = prompt();
   if (!isUppercase(input)) {
+    byeCount = 0;
     print('HUH?! SPEAK UP, SONNY!');
   } else if (input === 'BYE') {
     byeCount += 1;
@@ -27,6 +28,7 @@ while (true) {
     const response = 'NO, NOT SINCE '.concat(getRandomValue(1930, 1950));
     print(response);
   } else {
+    byeCount = 0;
     const response = 'NO, NOT SINCE '.concat(getRandomValue(1930, 1950));
     print(response);
   }
