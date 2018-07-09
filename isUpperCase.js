@@ -9,11 +9,11 @@
  */
 const isUppercase = (s) => {
   let i = 0;
-  s = s.toString();
+  sToString = s.toString();
   let character = '';
-  while (i < s.length) {
-    character = s.charAt(i);
-    if (character != ' ') {
+  while (i < sToString.length) {
+    character = sToString.charAt(i);
+    if (character !== ' ') {
       if (character === character.toLowerCase()) {
         return false;
       }
