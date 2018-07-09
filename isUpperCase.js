@@ -9,7 +9,7 @@
  */
 const isUppercase = (s) => {
   let i = 0;
-  sToString = s.toString();
+  const sToString = s.toString();
   let character = '';
   while (i < sToString.length) {
     character = sToString.charAt(i);
