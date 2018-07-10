@@ -15,29 +15,28 @@ const { prompt, print } = require('./prompt-print');
  */
 
 // Print the initial prompt.
-print('What do you want to say to Grandma!!');
+
+const conversationStarter = 'What do you want to say to Grandma!!';
+const yellBack = () => `NO, NOT SINCE ${getRandomValue(1930, 1950)}`;
+const speakUpText = 'HUH?! SPEAK UP, SONNY!';
+
 let byeCount = 0;
+
+print(conversationStarter);
+
 // Run a loop to continue the conversation.
-while (true) {
-  const input = prompt();
+while (byeCount < 2) {
+  const input = prompt().toString();
   // Check if the input string is in uppercase.
-  if (!isUppercase(input)) {
-    // Input string is not in upper case.
-    byeCount = 0;
-    print('HUH?! SPEAK UP, SONNY!');
-  } else if (input === 'BYE') {
+  if (input === 'BYE') {
     // Input string is 'BYE'.
     byeCount += 1;
-    if (byeCount >= 3) {
-      // Exiting the code as the user has entered 'BYE' 3 times.
-      break;
-    }
-    const response = 'NO, NOT SINCE '.concat(getRandomValue(1930, 1950));
-    print(response);
+  }
+  if (!isUppercase(input)) {
+    // Input string is not in upper case.
+    print(speakUpText);
   } else {
-    byeCount = 0;
     // Returning the standard response.
-    const response = 'NO, NOT SINCE '.concat(getRandomValue(1930, 1950));
-    print(response);
+    print(yellBack());
   }
 }
